@@ -1,0 +1,18 @@
+def solution(n, lost, reserve):
+    
+    lostList = list(set(lost)-set(reserve))
+    reserveList = list(set(reserve)-set(lost))
+
+    for i in range(n):
+        if i in lostList:
+            if (i-1 in reserveList):
+                lostList.remove(i)
+                reserveList.remove(i-1)
+
+            elif (i+1 in reserveList):
+                lostList.remove(i)
+                reserveList.remove(i+1)
+
+    answer = n - len(lostList)
+                
+    return answer
