@@ -1,0 +1,9 @@
+def solution(numbers):
+    sunn = 0
+    
+    for i in range(10):
+        if i in numbers:
+            sunn += 0
+        else:
+            sunn += i
+    return sunn
