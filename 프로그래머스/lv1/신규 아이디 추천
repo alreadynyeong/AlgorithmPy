@@ -1,0 +1,47 @@
+def solution(new_id):
+    answer = ''
+    
+    # 1
+    answer = new_id.lower()
+    
+    # 2
+    special = list("~!@#$%^&*()=+[{]}:?,<>/")
+    
+    for i in answer:
+        if i in special:
+            answer = answer.replace(i, '')
+    
+    # 3
+    while True:
+        if '..' not in answer:
+            break
+        else:
+            answer = answer.replace("..", ".")
+    
+    # 4
+    if answer[0] =='.':
+        answer = answer[1:]
+    elif answer[-1] == '.':
+        answer = answer[:-1]
+        
+    # 5
+    if len(answer) <= 0:
+        answer = "a"
+        
+    # 6
+    while True:
+        if len(answer) < 16:
+            break
+        else:
+            answer = answer[:-1]
+    if answer[-1] == '.':
+        answer = answer[:-1]
+        
+    # 7
+    while True:
+        if len(answer) > 2:
+            break
+        else:
+            answer = answer + answer[-1]
+
+    return answer
