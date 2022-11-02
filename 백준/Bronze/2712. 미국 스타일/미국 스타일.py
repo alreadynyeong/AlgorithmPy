@@ -1,5 +1,6 @@
 for _ in range(int(input())):
     n, s = input().split()
+    
     if s == "kg":
         print("%.4f %s" % (float(n)*2.2046, "lb"))
     elif s == "lb":
