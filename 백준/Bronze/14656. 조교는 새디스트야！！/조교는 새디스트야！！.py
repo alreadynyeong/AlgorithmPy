@@ -1,0 +1,5 @@
+n = int(input())
+li = list(map(int, input().split()))
+sortLi = sorted(li)
+ans = len([i for i in range(n) if li[i] != sortLi[i]])
+print(ans)
