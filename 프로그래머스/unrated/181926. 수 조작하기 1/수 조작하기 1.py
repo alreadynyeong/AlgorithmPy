@@ -1,11 +1,4 @@
 def solution(n, control):
     for c in control:
-        if c == 'w':
-            n += 1
-        elif c == 's':
-            n -= 1
-        elif c == 'd':
-            n += 10
-        elif c == 'a':
-            n -= 10
+        n += 1 if c=='w' else -1 if c=='s' else 10 if c=='d' else -10 if c=='a' else 0
     return n
